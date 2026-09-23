@@ -1,0 +1,3 @@
+import { Link } from "react-router-dom";
+import React from "react";
+export default function JobCard({ job }) { return <article className="job-card"><div className="company-logo">{job.company?.slice(0,1).toUpperCase()}</div><div className="job-main"><div className="job-top"><div><h3>{job.title}</h3><p className="company">{job.company}</p></div><span className="pill">{job.type}</span></div><div className="meta"><span>📍 {job.location}</span><span>💼 {job.category}</span>{job.salary && <span>💰 {job.salary}</span>}</div><div className="skills">{job.skills?.slice(0,4).map(s => <span key={s}>{s}</span>)}</div><Link to={`/jobs/${job._id}`} className="text-link">View Job →</Link></div></article> }
